@@ -17,7 +17,7 @@ import { defaultProducts } from './defaultData/defaultProducts.js';
 import { defaultDeliveryOptions } from './defaultData/defaultDeliveryOptions.js';
 import { defaultCart } from './defaultData/defaultCart.js';
 import { defaultOrders } from './defaultData/defaultOrders.js';
-import fs from 'fs';
+// import fs from 'fs';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -40,17 +40,17 @@ app.use('/api/reset', resetRoutes);
 app.use('/api/payment-summary', paymentSummaryRoutes);
 
 // Serve static files from the dist folder
-app.use(express.static(path.join(__dirname, 'dist')));
+// app.use(express.static(path.join(__dirname, 'dist')));
 
 // Catch-all route to serve index.html for any unmatched routes
-app.get('*', (req, res) => {
-  const indexPath = path.join(__dirname, 'dist', 'index.html');
-  if (fs.existsSync(indexPath)) {
-    res.sendFile(indexPath);
-  } else {
-    res.status(404).send('index.html not found');
-  }
-});
+// app.get('*', (req, res) => {
+//   const indexPath = path.join(__dirname, 'dist', 'index.html');
+//   if (fs.existsSync(indexPath)) {
+//     res.sendFile(indexPath);
+//   } else {
+//     res.status(404).send('index.html not found');
+//   }
+// });
 
 // Error handling middleware
 /* eslint-disable no-unused-vars */
